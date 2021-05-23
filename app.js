@@ -36,7 +36,7 @@ app.get('/register', (req, res) => {
 app.post("/register", function(req, res) {
 
     bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
-        // Store hash in your password DB.
+
         const newUser = new User({
             email: req.body.username,
             password: hash
